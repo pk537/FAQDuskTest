@@ -97,7 +97,7 @@ class QuestionController extends Controller
         ]);
         $question->body = $request->body;
         $question->save();
-        return redirect()->route('questions.show',['question_id' => $question->id])->with('message', 'Saved');
+        return redirect()->route('question.show',['question_id' => $question->id])->with('message', 'Saved');
     }
     /**
      * Remove the specified resource from storage.
