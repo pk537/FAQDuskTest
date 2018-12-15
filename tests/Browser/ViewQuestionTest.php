@@ -35,7 +35,8 @@ class ViewQuestionTest extends DuskTestCase
                     ->clickLink('Edit Question')
                     ->press('Save')
                     ->assertSee('Saved')
-
+                    ->press('Delete')
+                    ->assertSee('Deleted')
         ;});
     }
 }
