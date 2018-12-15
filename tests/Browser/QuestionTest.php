@@ -21,10 +21,9 @@ class QuestionTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1))
                     ->visit('/home')
-                    ->assertPathIs('/home')
-                    ->assertSee('Questions');
-                    //->press('Create a question.');
-
+                    ->assertSee('Questions')
+                    ->clickLink('Create a question.')
+                    ->assertPathIs('/question/create');
 
             //->assertSee('Create Question');
         });
