@@ -35,7 +35,17 @@ class AnswerTest extends DuskTestCase
                 ->clickLink('Answer Question')
                 ->type('body','framework')
                 ->press('Save')
+                ->assertSee('Saved')
                 ->assertSee('framework')
+                ->assertSee('View')
+                ->clickLink('View')
+                ->clickLink('Edit Answer')
+                ->type('body','Laravel is a framework')
+                ->press('Save')
+                ->assertSee('Updated')
+                ->press('Delete')
+                ->assertSee('Delete')
+
         ;});
     }
 }
