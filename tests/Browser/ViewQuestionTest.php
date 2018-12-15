@@ -32,6 +32,9 @@ class ViewQuestionTest extends DuskTestCase
                     ->visit('/question/1')
                     ->assertSee('Question')
                     ->assertSee('what is laravel')
+                    ->clickLink('Edit Question')
+                    ->press('Save')
+                    ->assertSee('Saved')
 
         ;});
     }
