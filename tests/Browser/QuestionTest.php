@@ -17,7 +17,11 @@ class QuestionTest extends DuskTestCase
     use DatabaseMigrations;
     public function testQuestionPage()
     {
-        factory(User::class)->create();
+        factory(User::class)->create([
+            'email'=>'pk537@njit.edu',
+            'password'=>'secret'
+        ]);
+
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1))
                     ->visit('/home')

@@ -23,10 +23,12 @@ class AnswerTest extends DuskTestCase
             'email'=>'pk537@njit.edu',
             'password'=>'secret'
         ]);
+
         factory(Question::class)->create([
             'user_id'=>User::where(['email'=>'pk537@njit.edu'])->first()->id,
             'body'=> 'what is laravel?'
         ]);
+
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1))
                 ->visit('/question/1')

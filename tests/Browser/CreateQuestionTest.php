@@ -19,8 +19,12 @@ class CreateQuestionTest extends DuskTestCase
 
     public function testCreateQuestion()
     {
+        factory(User::class)->create([
+            'email'=>'pk537@njit.edu',
+            'password'=>'secret'
+        ]);
 
-        factory(User::class)->create();
+
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1))
                     ->visit('/question/create')
