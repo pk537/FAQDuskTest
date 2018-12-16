@@ -7,7 +7,7 @@
 4.setup database / with sqlite or other https://laravel.com/docs/5.6/database
 
 #laravel dusk testing
-**Epic:**
+
 1. **RegistrationTest**:   
  **Test case:** Given username, password and password confirmation, user will be able to register from register page to home page provided that email is not registered before by hitting button `Register`.   
  **Status:** Successful

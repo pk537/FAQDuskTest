@@ -46,6 +46,10 @@ class Profile extends DuskTestCase
                     ->type('Body','I am an IS Student and I am in First Semester')
                     ->press('Save')
                     ->assertSee('Updated Profile')
+                    ->clickLink('My Account')
+                    ->assertSee('Logout')
+                    ->clickLink('Logout')
+                    ->assertPathIs('/')
 
         ;});
     }
